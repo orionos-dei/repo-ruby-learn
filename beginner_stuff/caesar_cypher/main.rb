@@ -4,26 +4,25 @@ def caesar_cypher string, factor
     factor = factor % 26
   end
   
-  shift = factor
   temp_number = 0
   temp_string = ""
 
   string.scan(/./){ |char|
     
     if char.ord.between?("A".ord,"Z".ord)
-      if char.ord + shift > "Z".ord
+      if char.ord + factor > "Z".ord
         temp_number = "A".ord
-        temp_number += (char.ord + shift - 1) % "Z".ord
+        temp_number += (char.ord + factor - 1) % "Z".ord
       else
-        temp_number = char.ord + shift
+        temp_number = char.ord + factor
       end
       temp_string << temp_number.chr
     elsif char.ord.between?("a".ord,"z".ord)
-      if char.ord + shift > "z".ord
+      if char.ord + factor > "z".ord
         temp_number = "a".ord
-        temp_number += (char.ord + shift - 1) % "z".ord
+        temp_number += (char.ord + factor - 1) % "z".ord
       else
-        temp_number = char.ord + shift
+        temp_number = char.ord + factor
       end
       temp_string << temp_number.chr
     else
