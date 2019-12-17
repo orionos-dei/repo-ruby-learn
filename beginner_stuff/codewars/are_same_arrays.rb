@@ -1,5 +1,5 @@
 def comp(array1, array2)
-  return false if(array1&&array2).nil?
+  return false if(array1) || array2).nil?
   array1.map{|i| i*i}.sort == array2.sort
 end
 
