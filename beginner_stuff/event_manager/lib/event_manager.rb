@@ -45,9 +45,6 @@ contents.each do |row|
 
   legislators = legislators_by_zipcode(zipcode)
 
-  personal_letter = template_letter.gsub("FIRST_NAME",name)
-  personal_letter.gsub!("LEGISLATORS",legislators)
-
   form_letter = erb_template.result(binding)
 
   save_thank_you_letter(id,form_letter)
